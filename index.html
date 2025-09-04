@@ -14,12 +14,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
     }
 
     .container {
       text-align: center;
+      margin-top: 40px;
     }
 
     img {
@@ -30,9 +30,15 @@
     }
 
     h1 {
-      margin: 20px 0 15px;
+      margin: 20px 0 5px;
       font-size: 28px;
       font-weight: bold;
+    }
+
+    .artist {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 20px;
     }
 
     .btn {
@@ -60,7 +66,7 @@
     }
 
     .apple {
-      background-color: #FA5A72; /* фирменный розовый */
+      background-color: #FA5A72; /* розовый Apple Music */
     }
 
     .spotify {
@@ -72,12 +78,38 @@
       width: 20px;
       height: 20px;
     }
+
+    /* Плеер */
+    .player-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .player-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    #yt-player {
+      display: none; /* скрыт по умолчанию */
+      margin-top: 15px;
+    }
+
+    /* Подвал */
+    footer {
+      margin-top: 50px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/de/81/d8/de81d8f7-fae7-0388-fbd7-31d05cc3ae00/4988061918853.jpg/632x632bb.webp" alt="Eve – Insomnia">
     <h1>Insomnia</h1>
+    <div class="artist">Eve</div>
 
     <!-- Кнопка YouTube -->
     <a class="btn youtube" href="https://www.youtube.com/watch?v=35nV_M3asRs" target="_blank">
@@ -87,7 +119,7 @@
 
     <!-- Кнопка Apple Music -->
     <a class="btn apple" href="https://music.apple.com/us/album/insomnia-single/1729162164" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/800px-Apple_Music_icon.svg.png" alt="Apple Music">
+      <img src="https://avatars.mds.yandex.net/i?id=ec11fe4c0d8c1dbcb8c37c7fe232a796009889f8-5383195-images-thumbs&n=13">
       Слушать на Apple Music
     </a>
 
@@ -96,6 +128,38 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify">
       Слушать на Spotify
     </a>
+
+    <!-- YouTube плеер -->
+    <div class="player-section">
+      <button class="btn youtube" onclick="togglePlayer()">
+        🎬 Показать YouTube плеер
+      </button>
+      <div id="yt-player">
+        <div class="player-title">YouTube плеер</div>
+        <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/35nV_M3asRs"
+          title="Eve – Insomnia" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
+
+  <footer>
+    «Insomnia» — песня, созданная в 2024 году японским исполнителем Eve. 
+    Композиция получила популярность благодаря уникальному стилю и анимационному клипу.
+  </footer>
+
+  <script>
+    function togglePlayer() {
+      const player = document.getElementById('yt-player');
+      if (player.style.display === 'none') {
+        player.style.display = 'block';
+      } else {
+        player.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
