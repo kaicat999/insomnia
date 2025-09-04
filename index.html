@@ -36,19 +36,41 @@
     }
 
     .btn {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       padding: 12px 24px;
-      background-color: #ff0000;
+      margin: 8px 0;
       color: #fff;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
       font-size: 16px;
-      transition: background-color 0.3s;
+      transition: transform 0.2s ease-in-out;
     }
 
     .btn:hover {
-      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    /* Цвета сервисов */
+    .youtube {
+      background-color: #FF0000;
+    }
+
+    .apple {
+      background-color: #FA5A72; /* фирменный розовый */
+    }
+
+    .spotify {
+      background-color: #1DB954;
+    }
+
+    /* Иконки */
+    .btn img {
+      width: 20px;
+      height: 20px;
     }
   </style>
 </head>
@@ -56,8 +78,24 @@
   <div class="container">
     <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/de/81/d8/de81d8f7-fae7-0388-fbd7-31d05cc3ae00/4988061918853.jpg/632x632bb.webp" alt="Eve – Insomnia">
     <h1>Insomnia</h1>
-    <a class="btn" href="https://www.youtube.com/watch?v=35nV_M3asRs" target="_blank">Слушать на YouTube</a>
+
+    <!-- Кнопка YouTube -->
+    <a class="btn youtube" href="https://www.youtube.com/watch?v=35nV_M3asRs" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+      Слушать на YouTube
+    </a>
+
+    <!-- Кнопка Apple Music -->
+    <a class="btn apple" href="https://music.apple.com/us/album/insomnia-single/1729162164" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/800px-Apple_Music_icon.svg.png" alt="Apple Music">
+      Слушать на Apple Music
+    </a>
+
+    <!-- Кнопка Spotify -->
+    <a class="btn spotify" href="https://open.spotify.com/track/1hJzgTgV1zJyYvFeoDyAJR" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify">
+      Слушать на Spotify
+    </a>
   </div>
 </body>
 </html>
-
